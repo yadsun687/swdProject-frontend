@@ -2,7 +2,7 @@ import TopMenuItem from "./TopMenuItem"
 import Image from "next/image"
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
-import Link from "next/link"
+import { Link } from "@mui/material"
 
 export default async function TopMenu(){
 
@@ -21,9 +21,11 @@ export default async function TopMenu(){
             }
             
             <TopMenuItem title={"Booking"} pageRef="/booking"/>
-            <Image src={"/img/logo.png"} width={800} height={800} alt="logo"
-                className=" size-16 p-1"
-            />
+            <Link href={"/"}>
+                <Image src={"/img/logo.png"} width={800} height={800} alt="logo"
+                    className=" size-16 p-1"
+                />
+            </Link>
         </div>
     )
 }
